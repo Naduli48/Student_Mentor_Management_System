@@ -9,7 +9,7 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final Logger logger = LoggerUtil.getLogger("SMMSLogger");
-
+//jnsjngosfnglks
     public static void main(String[] args) {
 
         MentorshipProgram program = new MentorshipProgram("P001", "University Mentorship Programme 2026");
