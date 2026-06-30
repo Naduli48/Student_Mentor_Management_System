@@ -91,9 +91,13 @@ public class Main {
             System.out.println("Student registered successfully.");
             logger.info("Student registered: " + id);
 
-        } catch (DuplicateRegistrationException | InvalidStudentDataException e) {
-            System.out.println("Registration failed: " + e.getMessage());
-            logger.warning("Registration failed: " + e.getMessage());
+        }  catch (DuplicateRegistrationException e) {
+        System.out.println("Registration failed: " + e.getMessage());
+        logger.warning("Registration failed: " + e.getMessage());
+
+        } catch (InvalidStudentDataException e) {
+        System.out.println("Registration failed: " + e.getMessage());
+        logger.warning("Registration failed: " + e.getMessage());
 
         } catch (NumberFormatException e) {
             System.out.println("Year of study must be a number.");
