@@ -50,8 +50,7 @@ public class Main {
         }
     }
 
-    // Handles the student registration process, including input validation
-    // and duplicate checking before saving to the database.
+    // Handles the student registration process, including input validation and duplicate checking before saving to the database.
     private static void registerStudent(MentorshipProgram program, StudentRepository repository) {
         try {
             System.out.print("Enter student ID: ");
