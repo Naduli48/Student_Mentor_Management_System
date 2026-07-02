@@ -112,8 +112,16 @@ public class Main {
     private static void validateStudentData(String id, String name, String email)
             throws InvalidStudentDataException {
 
-        if (id.isEmpty() || name.isEmpty() || email.isEmpty()) {
-            throw new InvalidStudentDataException("ID, name, and email cannot be empty.");
+        if (id.isEmpty()) {
+            throw new InvalidStudentDataException("Student ID cannot be empty.");
+        }
+
+        if (name.isEmpty()) {
+            throw new InvalidStudentDataException("Name cannot be empty.");
+        }
+
+        if (email.isEmpty()) {
+            throw new InvalidStudentDataException("Email cannot be empty.");
         }
 
         if (!email.contains("@")) {
