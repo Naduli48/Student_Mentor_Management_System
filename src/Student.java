@@ -1,7 +1,4 @@
 public class Student extends User {
-    private String id;
-    private String name;
-    private String email;
     private String program;
     private int year;
     private String preferences;

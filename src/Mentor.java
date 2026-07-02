@@ -1,5 +1,4 @@
 public class Mentor extends User {
-
     private String expertise;
     private String availability;
 
