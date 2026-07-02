@@ -12,8 +12,7 @@ public class LoggerUtil {
     // Holds the single shared logger instance
     private static Logger logger;
 
-    // Returns the shared logger instance, creating and configuring it
-    // the first time it is requested.
+    // Returns the shared logger instance, creating and configuring it the first time it is requested.
     public static Logger getLogger(String name) {
         if (logger == null) {
             logger = Logger.getLogger(name);
