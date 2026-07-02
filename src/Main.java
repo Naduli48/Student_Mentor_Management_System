@@ -109,8 +109,7 @@ public class Main {
         }
     }
 
-    // Validates that required student fields are not empty and that
-    // the email address contains a basic valid format.
+    // Validates that required student fields are not empty and that the email address contains a basic valid format.
     private static void validateStudentData(String id, String name, String email)
             throws InvalidStudentDataException {
 
