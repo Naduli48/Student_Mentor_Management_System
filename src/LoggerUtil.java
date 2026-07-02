@@ -21,8 +21,7 @@ public class LoggerUtil {
         return logger;
     }
 
-    // Configures the logger to write to a file called SMMS.log
-    // using a simple, human-readable format.
+    // Configures the logger to write to a file called SMMS.log using a simple, human-readable format.
     private static void setupLogger() {
         try {
             FileHandler fileHandler = new FileHandler("SMMS.log", true);
