@@ -6,3 +6,29 @@ Jul 02, 2026 3:00:31 PM Main removeStudent
 INFO: Student removed: 1
 Jul 02, 2026 3:04:09 PM Main removeStudent
 WARNING: Attempted to remove non-existent student: 1
+Jul 02, 2026 3:09:29 PM Main removeStudent
+WARNING: Attempted to remove non-existent student: 1
+Jul 02, 2026 3:10:07 PM Main registerStudent
+WARNING: Registration failed: Email address is not valid.
+Jul 02, 2026 3:10:42 PM Main registerStudent
+INFO: Student registered: 1
+Jul 02, 2026 3:10:55 PM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 02, 2026 3:11:25 PM Main registerStudent
+WARNING: Registration failed: A student with ID 1 is already registered.
+Jul 02, 2026 3:11:48 PM Main registerStudent
+INFO: Student registered: kkk
+Jul 02, 2026 3:11:56 PM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 02, 2026 3:12:24 PM Main registerStudent
+WARNING: Invalid year input during registration.
+Jul 02, 2026 3:12:40 PM Main removeStudent
+WARNING: Attempted to remove non-existent student: 5
+Jul 02, 2026 3:12:48 PM Main removeStudent
+INFO: Student removed: 1
+Jul 02, 2026 3:12:51 PM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 02, 2026 3:13:01 PM Main removeStudent
+WARNING: Attempted to remove non-existent student: 2
+Jul 02, 2026 3:13:09 PM Main removeStudent
+INFO: Student removed: kkk
