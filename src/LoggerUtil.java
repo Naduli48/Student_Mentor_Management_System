@@ -4,7 +4,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-// Utility class that provides a single shared logger instance for the entire application. Ensures all log messages are written consistently
+// Utility class that provides a single shared logger instance for the entire application.
+// Ensures all log messages are written consistently
 // to the same log file (SMMS.log) instead of being scattered or duplicated.
 public class LoggerUtil {
 
