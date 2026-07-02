@@ -23,10 +23,14 @@ public class LoggerUtil {
     // Configures the logger to write to a file called SMMS.log using a simple, human-readable format.
     private static void setupLogger() {
         try {
+            // remove default console handler so logs only go to file
+            java.util.logging.LogManager.getLogManager().reset();
+
             FileHandler fileHandler = new FileHandler("SMMS.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             logger.addHandler(fileHandler);
             logger.setLevel(Level.ALL);
+
         } catch (IOException e) {
             System.err.println("Logger setup failed: " + e.getMessage());
         }

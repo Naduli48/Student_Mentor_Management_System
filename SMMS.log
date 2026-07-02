@@ -4,3 +4,5 @@ Jun 30, 2026 10:07:54 AM Main registerStudent
 WARNING: Invalid year input during registration.
 Jul 02, 2026 3:00:31 PM Main removeStudent
 INFO: Student removed: 1
+Jul 02, 2026 3:04:09 PM Main removeStudent
+WARNING: Attempted to remove non-existent student: 1
