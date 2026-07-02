@@ -2,3 +2,5 @@ Jun 30, 2026 10:06:02 AM Main registerStudent
 WARNING: Registration failed: Email address is not valid.
 Jun 30, 2026 10:07:54 AM Main registerStudent
 WARNING: Invalid year input during registration.
+Jul 02, 2026 3:00:31 PM Main removeStudent
+INFO: Student removed: 1

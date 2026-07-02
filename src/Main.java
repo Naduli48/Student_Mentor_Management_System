@@ -155,10 +155,20 @@ public class Main {
     }
 
     // Removes a student from both the in-memory programme list and the database.
+    // Removes a student from both the in-memory programme list and the database.
     private static void removeStudent(MentorshipProgram program, StudentRepository repository) {
         try {
             System.out.print("Enter student ID to remove: ");
             String id = scanner.nextLine().trim();
+
+            // check if student exists in database before attempting removal
+            Student existing = repository.findById(id);
+
+            if (existing == null) {
+                System.out.println("No student found with ID: " + id + ". Nothing was removed.");
+                logger.warning("Attempted to remove non-existent student: " + id);
+                return;
+            }
 
             program.removeStudent(id);
             repository.delete(id);
