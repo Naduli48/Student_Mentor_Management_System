@@ -155,7 +155,6 @@ public class Main {
     }
 
     // Removes a student from both the in-memory programme list and the database.
-    // Removes a student from both the in-memory programme list and the database.
     private static void removeStudent(MentorshipProgram program, StudentRepository repository) {
         try {
             System.out.print("Enter student ID to remove: ");
