@@ -75,7 +75,7 @@ public class Main {
             validateStudentData(id, name, email);
 
             // check for duplicate registration
-            if (repository.findById(id) != null) {
+            if (program.isStudentRegistered(id)) {
                 throw new DuplicateRegistrationException("A student with ID " + id + " is already registered.");
             }
 
