@@ -52,3 +52,23 @@ Jul 06, 2026 9:31:38 AM Main registerStudent
 WARNING: Registration failed: Year must be between 1 and 7.
 Jul 06, 2026 9:32:02 AM Main registerStudent
 WARNING: Registration failed: Email address is not valid.
+Jul 06, 2026 9:34:37 AM Main registerStudent
+WARNING: Registration failed: A student with ID 1 is already registered.
+Jul 06, 2026 9:35:02 AM Main registerStudent
+INFO: Student registered: 2
+Jul 06, 2026 9:35:05 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 06, 2026 9:35:29 AM Main registerStudent
+INFO: Student registered: 3
+Jul 06, 2026 9:35:32 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 06, 2026 9:35:43 AM Main removeStudent
+INFO: Student removed: 1
+Jul 06, 2026 9:35:52 AM Main removeStudent
+INFO: Student removed: 2
+Jul 06, 2026 9:35:54 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 06, 2026 9:36:11 AM Main removeStudent
+INFO: Student removed: 3
+Jul 06, 2026 9:36:15 AM Main viewAllStudents
+INFO: Viewed all registered students.
