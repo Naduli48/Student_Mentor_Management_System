@@ -70,7 +70,7 @@ public class Main {
                 throw new InvalidStudentDataException("Program cannot be empty.");
             }
 
-            System.out.print("Enter year of study (1-7): ");
+            System.out.print("Enter year of study (1-4): ");
             String yearInput = scanner.nextLine().trim();
 
             // check year field is not blank before parsing
