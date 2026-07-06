@@ -108,27 +108,6 @@ public class Main {
         }
     }
 
-    // Validates that required student fields are not empty and that the email address contains a basic valid format.
-    private static void validateStudentData(String id, String name, String email)
-            throws InvalidStudentDataException {
-
-        if (id.isEmpty()) {
-            throw new InvalidStudentDataException("Student ID cannot be empty.");
-        }
-
-        if (name.isEmpty()) {
-            throw new InvalidStudentDataException("Name cannot be empty.");
-        }
-
-        if (email.isEmpty()) {
-            throw new InvalidStudentDataException("Email cannot be empty.");
-        }
-
-        if (!email.contains("@")) {
-            throw new InvalidStudentDataException("Email address is not valid.");
-        }
-    }
-
     // Retrieves and displays all students currently saved in the database.
     private static void viewAllStudents(StudentRepository repository) {
         try {
