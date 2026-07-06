@@ -21,7 +21,6 @@ public class StudentRegistrationTest {
     // Runs after each test - cleans up any test data inserted into the database
     @After
     public void tearDown() throws SQLException {
-        // remove test students so each test starts with clean data
         repository.delete("TEST001");
         repository.delete("TEST002");
     }
@@ -33,7 +32,6 @@ public class StudentRegistrationTest {
                 "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
                 "BSc AI and Data Science", 2, "Machine Learning"
         );
-
         assertEquals("TEST001", student.getId());
         assertEquals("Naduli Kosgallana", student.getName());
         assertEquals("naduli@gmail.com", student.getEmail());
@@ -59,10 +57,8 @@ public class StudentRegistrationTest {
                 "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
                 "BSc AI and Data Science", 2, "Machine Learning"
         );
-
         repository.save(student);
         Student found = repository.findById("TEST001");
-
         assertNotNull(found);
         assertEquals("TEST001", found.getId());
         assertEquals("Naduli Kosgallana", found.getName());
@@ -83,10 +79,8 @@ public class StudentRegistrationTest {
                 "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
                 "BSc AI and Data Science", 2, "Machine Learning"
         );
-
         repository.save(student);
         repository.delete("TEST001");
-
         Student result = repository.findById("TEST001");
         assertNull(result);
     }
@@ -98,43 +92,47 @@ public class StudentRegistrationTest {
                 "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
                 "BSc AI and Data Science", 2, "Machine Learning"
         );
-
         program.addStudent(student);
         assertTrue(program.isStudentRegistered("TEST001"));
         assertFalse(program.isStudentRegistered("TEST002"));
     }
 
-    // Test 7: Verify InvalidStudentDataException is thrown for empty ID
+    // Test 7: Verify InvalidStudentDataException thrown for empty ID
     @Test(expected = InvalidStudentDataException.class)
-    public void testValidationThrowsExceptionForEmptyId() throws InvalidStudentDataException {
-        validateStudentData("", "Naduli", "naduli@gmail.com");
+    public void testValidationThrowsExceptionForEmptyId()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("", "Naduli", "naduli@gmail.com", 2);
     }
 
-    // Test 8: Verify InvalidStudentDataException is thrown for empty name
+    // Test 8: Verify InvalidStudentDataException thrown for empty name
     @Test(expected = InvalidStudentDataException.class)
-    public void testValidationThrowsExceptionForEmptyName() throws InvalidStudentDataException {
-        validateStudentData("TEST001", "", "naduli@gmail.com");
+    public void testValidationThrowsExceptionForEmptyName()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "", "naduli@gmail.com", 2);
     }
 
-    // Test 9: Verify InvalidStudentDataException is thrown for invalid email
+    // Test 9: Verify InvalidStudentDataException thrown for invalid email
     @Test(expected = InvalidStudentDataException.class)
-    public void testValidationThrowsExceptionForInvalidEmail() throws InvalidStudentDataException {
-        validateStudentData("TEST001", "Naduli", "notanemail");
+    public void testValidationThrowsExceptionForInvalidEmail()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "Naduli", "notanemail", 2);
     }
 
-    // Test 10: Verify DuplicateRegistrationException is thrown for duplicate ID
+    // Test 10: Verify DuplicateRegistrationException thrown for duplicate ID
+    // Simulates the duplicate check performed in Main.registerStudent()
     @Test(expected = DuplicateRegistrationException.class)
-    public void testDuplicateRegistrationThrowsException() throws SQLException, DuplicateRegistrationException {
+    public void testDuplicateRegistrationThrowsException()
+            throws SQLException, DuplicateRegistrationException {
         Student student = new Student(
                 "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
                 "BSc AI and Data Science", 2, "Machine Learning"
         );
-
         repository.save(student);
 
-        // attempt to register same ID again - should throw exception
+        // simulates the duplicate check performed in Main.registerStudent()
         if (repository.findById("TEST001") != null) {
-            throw new DuplicateRegistrationException("A student with ID TEST001 is already registered.");
+            throw new DuplicateRegistrationException(
+                    "A student with ID TEST001 is already registered.");
         }
     }
 
@@ -143,29 +141,23 @@ public class StudentRegistrationTest {
     public void testFindAllReturnsStudents() throws SQLException {
         Student s1 = new Student("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", 2, "ML");
         Student s2 = new Student("TEST002", "Kasun", "kasun@gmail.com", "BSc CS", 1, "Web");
-
         repository.save(s1);
         repository.save(s2);
-
         java.util.List<Student> all = repository.findAll();
         assertTrue(all.size() >= 2);
     }
 
-    // Helper method - mirrors validateStudentData() from Main class for testing purposes
-    private void validateStudentData(String id, String name, String email)
+    // Test 12: Verify InvalidStudentDataException thrown for year below 1
+    @Test(expected = InvalidStudentDataException.class)
+    public void testValidationThrowsExceptionForInvalidYearBelow()
             throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 0);
+    }
 
-        if (id.isEmpty()) {
-            throw new InvalidStudentDataException("Student ID cannot be empty.");
-        }
-        if (name.isEmpty()) {
-            throw new InvalidStudentDataException("Name cannot be empty.");
-        }
-        if (email.isEmpty()) {
-            throw new InvalidStudentDataException("Email cannot be empty.");
-        }
-        if (!email.contains("@")) {
-            throw new InvalidStudentDataException("Email address is not valid.");
-        }
+    // Test 13: Verify InvalidStudentDataException thrown for year above 7
+    @Test(expected = InvalidStudentDataException.class)
+    public void testValidationThrowsExceptionForInvalidYearAbove()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 8);
     }
 }
