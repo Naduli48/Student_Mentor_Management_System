@@ -1,6 +1,5 @@
 // Responsible for validating student registration input data.
-// Separated from Main to follow the single responsibility principle -
-// validation logic is defined once and reused by both Main and tests.
+// Separated from Main to follow the single responsibility principle validation logic is defined once and reused by both Main and tests.
 public class StudentValidator {
 
     // Validates student registration fields.
