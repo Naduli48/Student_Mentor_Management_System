@@ -24,8 +24,13 @@ public class Main {
             System.out.println("3. Remove a student");
             System.out.println("4. Exit");
             System.out.print("\nEnter option: ");
+            String choice = scanner.nextLine().trim();
 
-            String choice = scanner.nextLine();
+            // check if input is empty
+            if (choice.isEmpty()) {
+                System.out.println("Option cannot be empty. Please enter 1, 2, 3 or 4.");
+                continue;
+            }
 
             switch (choice) {
                 case "1":
@@ -45,7 +50,7 @@ public class Main {
                     return;
 
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println("Invalid option. Please enter 1, 2, 3 or 4.");
             }
         }
     }
