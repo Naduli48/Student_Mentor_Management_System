@@ -42,3 +42,13 @@ Jul 02, 2026 5:03:31 PM Main removeStudent
 WARNING: Attempted to remove non-existent student: 1654
 Jul 02, 2026 5:03:39 PM Main removeStudent
 INFO: Student removed: 16688
+Jul 06, 2026 9:30:34 AM Main registerStudent
+INFO: Student registered: 1
+Jul 06, 2026 9:30:37 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 06, 2026 9:31:11 AM Main removeStudent
+WARNING: Attempted to remove non-existent student: 4
+Jul 06, 2026 9:31:38 AM Main registerStudent
+WARNING: Registration failed: Year must be between 1 and 7.
+Jul 06, 2026 9:32:02 AM Main registerStudent
+WARNING: Registration failed: Email address is not valid.

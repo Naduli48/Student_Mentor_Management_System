@@ -65,7 +65,7 @@ public class Main {
             System.out.print("Enter program: ");
             String courseProgram = scanner.nextLine().trim();
 
-            System.out.print("Enter year of study (1-7): ");
+            System.out.print("Enter year of study (1-4): ");
             int year = Integer.parseInt(scanner.nextLine().trim());
 
             System.out.print("Enter mentorship preferences: ");
