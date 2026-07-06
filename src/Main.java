@@ -65,13 +65,16 @@ public class Main {
             System.out.print("Enter program: ");
             String courseProgram = scanner.nextLine().trim();
 
-            System.out.print("Enter year of study: ");
+            System.out.print("Enter year of study (1-7): ");
             int year = Integer.parseInt(scanner.nextLine().trim());
 
             System.out.print("Enter mentorship preferences: ");
             String preferences = scanner.nextLine().trim();
 
-            // check for duplicate registration
+            // validate input using StudentValidator
+            StudentValidator.validate(id, name, email, year);
+
+            // check for duplicate registration against database
             if (repository.findById(id) != null) {
                 throw new DuplicateRegistrationException("A student with ID " + id + " is already registered.");
             }
@@ -87,13 +90,13 @@ public class Main {
             System.out.println("Student registered successfully.");
             logger.info("Student registered: " + id);
 
-        }  catch (DuplicateRegistrationException e) {
-        System.out.println("Registration failed: " + e.getMessage());
-        logger.warning("Registration failed: " + e.getMessage());
+        } catch (DuplicateRegistrationException e) {
+            System.out.println("Registration failed: " + e.getMessage());
+            logger.warning("Registration failed: " + e.getMessage());
 
         } catch (InvalidStudentDataException e) {
-        System.out.println("Registration failed: " + e.getMessage());
-        logger.warning("Registration failed: " + e.getMessage());
+            System.out.println("Registration failed: " + e.getMessage());
+            logger.warning("Registration failed: " + e.getMessage());
 
         } catch (NumberFormatException e) {
             System.out.println("Year of study must be a number.");
