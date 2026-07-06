@@ -65,13 +65,30 @@ public class Main {
             System.out.print("Enter program: ");
             String courseProgram = scanner.nextLine().trim();
 
-            System.out.print("Enter year of study (1-4): ");
-            int year = Integer.parseInt(scanner.nextLine().trim());
+            // check program field separately since it is not in StudentValidator
+            if (courseProgram.isEmpty()) {
+                throw new InvalidStudentDataException("Program cannot be empty.");
+            }
+
+            System.out.print("Enter year of study (1-7): ");
+            String yearInput = scanner.nextLine().trim();
+
+            // check year field is not blank before parsing
+            if (yearInput.isEmpty()) {
+                throw new InvalidStudentDataException("Year of study cannot be empty.");
+            }
+
+            int year = Integer.parseInt(yearInput);
 
             System.out.print("Enter mentorship preferences: ");
             String preferences = scanner.nextLine().trim();
 
-            // validate input using StudentValidator
+            // check preferences field separately
+            if (preferences.isEmpty()) {
+                throw new InvalidStudentDataException("Mentorship preferences cannot be empty.");
+            }
+
+            // validate all core fields using StudentValidator
             StudentValidator.validate(id, name, email, year);
 
             // check for duplicate registration against database
@@ -99,7 +116,7 @@ public class Main {
             logger.warning("Registration failed: " + e.getMessage());
 
         } catch (NumberFormatException e) {
-            System.out.println("Year of study must be a number.");
+            System.out.println("Registration failed: Year of study must be a valid number.");
             logger.warning("Invalid year input during registration.");
 
         } catch (SQLException e) {

@@ -72,3 +72,35 @@ Jul 06, 2026 9:36:11 AM Main removeStudent
 INFO: Student removed: 3
 Jul 06, 2026 9:36:15 AM Main viewAllStudents
 INFO: Viewed all registered students.
+Jul 06, 2026 11:15:13 AM Main registerStudent
+WARNING: Registration failed: Email address is not valid.
+Jul 06, 2026 11:15:29 AM Main registerStudent
+INFO: Student registered: 1
+Jul 06, 2026 11:15:34 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 06, 2026 11:15:50 AM Main registerStudent
+WARNING: Invalid year input during registration.
+Jul 06, 2026 11:23:57 AM Main registerStudent
+WARNING: Registration failed: Student ID cannot be empty.
+Jul 06, 2026 11:24:09 AM Main registerStudent
+WARNING: Registration failed: Program cannot be empty.
+Jul 06, 2026 11:24:18 AM Main registerStudent
+WARNING: Registration failed: Program cannot be empty.
+Jul 06, 2026 11:24:49 AM Main registerStudent
+WARNING: Registration failed: Program cannot be empty.
+Jul 06, 2026 11:25:07 AM Main registerStudent
+WARNING: Registration failed: Name cannot be empty.
+Jul 06, 2026 11:25:23 AM Main registerStudent
+WARNING: Registration failed: Program cannot be empty.
+Jul 06, 2026 11:25:36 AM Main registerStudent
+WARNING: Registration failed: Email cannot be empty.
+Jul 06, 2026 11:25:51 AM Main registerStudent
+WARNING: Registration failed: Program cannot be empty.
+Jul 06, 2026 11:26:03 AM Main registerStudent
+WARNING: Registration failed: Year of study cannot be empty.
+Jul 06, 2026 11:26:18 AM Main registerStudent
+WARNING: Registration failed: Mentorship preferences cannot be empty.
+Jul 06, 2026 11:26:32 AM Main registerStudent
+WARNING: Invalid year input during registration.
+Jul 06, 2026 11:26:52 AM Main registerStudent
+WARNING: Registration failed: Year must be between 1 and 4.
