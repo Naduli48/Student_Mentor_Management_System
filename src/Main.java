@@ -71,9 +71,6 @@ public class Main {
             System.out.print("Enter mentorship preferences: ");
             String preferences = scanner.nextLine().trim();
 
-            // validate input before proceeding
-            validateStudentData(id, name, email);
-
             // check for duplicate registration
             if (repository.findById(id) != null) {
                 throw new DuplicateRegistrationException("A student with ID " + id + " is already registered.");
