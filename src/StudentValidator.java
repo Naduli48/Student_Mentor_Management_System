@@ -23,8 +23,8 @@ public class StudentValidator {
             throw new InvalidStudentDataException("Email address is not valid.");
         }
 
-        if (year < 1 || year > 7) {
-            throw new InvalidStudentDataException("Year must be between 1 and 7.");
+        if (year < 1 || year > 4) {
+            throw new InvalidStudentDataException("Year must be between 1 and 4.");
         }
     }
 }
