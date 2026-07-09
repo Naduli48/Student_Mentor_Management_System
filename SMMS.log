@@ -110,3 +110,5 @@ Jul 06, 2026 11:31:06 AM Main viewAllStudents
 INFO: Viewed all registered students.
 Jul 09, 2026 4:53:30 PM Main registerStudent
 WARNING: Registration failed: Program cannot be empty.
+Jul 09, 2026 4:54:53 PM Main registerStudent
+WARNING: Registration failed: Program cannot be empty. Complete all the fields
