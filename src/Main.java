@@ -61,6 +61,10 @@ public class Main {
             System.out.print("Enter student ID: ");
             String id = scanner.nextLine().trim();
 
+            // check year field is not blank before parsing
+            if (id.isEmpty()) {
+                throw new InvalidStudentDataException("Year of study cannot be empty.");
+            }
 
             System.out.print("Enter name: ");
             String name = scanner.nextLine().trim();
