@@ -154,7 +154,7 @@ public class StudentRegistrationTest {
         StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 0);
     }
 
-    // Test 13: Verify InvalidStudentDataException thrown for year above 7
+    // Test 13: Verify InvalidStudentDataException thrown for year above 4
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearAbove()
             throws InvalidStudentDataException {
