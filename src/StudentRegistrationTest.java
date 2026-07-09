@@ -158,6 +158,6 @@ public class StudentRegistrationTest {
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearAbove()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 8);
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 5);
     }
 }
