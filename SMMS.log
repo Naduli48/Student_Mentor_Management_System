@@ -112,3 +112,5 @@ Jul 09, 2026 4:53:30 PM Main registerStudent
 WARNING: Registration failed: Program cannot be empty.
 Jul 09, 2026 4:54:53 PM Main registerStudent
 WARNING: Registration failed: Program cannot be empty. Complete all the fields
+Jul 09, 2026 5:23:38 PM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
