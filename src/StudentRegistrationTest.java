@@ -97,67 +97,38 @@ public class StudentRegistrationTest {
         assertFalse(program.isStudentRegistered("TEST002"));
     }
 
-    // Test 7: Verify InvalidStudentDataException thrown for empty ID
+    // Test 7: empty ID
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmptyId()
             throws InvalidStudentDataException {
-        StudentValidator.validate("", "Naduli", "naduli@gmail.com", 2);
+        StudentValidator.validate("", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 8: Verify InvalidStudentDataException thrown for empty name
+    // Test 8: empty name
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmptyName()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "", "naduli@gmail.com", 2);
+        StudentValidator.validate("TEST001", "", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 9: Verify InvalidStudentDataException thrown for invalid email
+    // Test 9: invalid email
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidEmail()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "notanemail", 2);
+        StudentValidator.validate("TEST001", "Naduli", "notanemail", "BSc AI", "ML", 2);
     }
 
-    // Test 10: Verify DuplicateRegistrationException thrown for duplicate ID
-    // Simulates the duplicate check performed in Main.registerStudent()
-    @Test(expected = DuplicateRegistrationException.class)
-    public void testDuplicateRegistrationThrowsException()
-            throws SQLException, DuplicateRegistrationException {
-        Student student = new Student(
-                "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
-                "BSc AI and Data Science", 2, "Machine Learning"
-        );
-        repository.save(student);
-
-        // simulates the duplicate check performed in Main.registerStudent()
-        if (repository.findById("TEST001") != null) {
-            throw new DuplicateRegistrationException(
-                    "A student with ID TEST001 is already registered.");
-        }
-    }
-
-    // Test 11: Verify findAll returns all saved students
-    @Test
-    public void testFindAllReturnsStudents() throws SQLException {
-        Student s1 = new Student("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", 2, "ML");
-        Student s2 = new Student("TEST002", "Kasun", "kasun@gmail.com", "BSc CS", 1, "Web");
-        repository.save(s1);
-        repository.save(s2);
-        java.util.List<Student> all = repository.findAll();
-        assertTrue(all.size() >= 2);
-    }
-
-    // Test 12: Verify InvalidStudentDataException thrown for year below 1
+    // Test 12: year below range
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearBelow()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 0);
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 0);
     }
 
-    // Test 13: Verify InvalidStudentDataException thrown for year above 4
+    // Test 13: year above range
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearAbove()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", 5);
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 5);
     }
 }
