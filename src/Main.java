@@ -61,6 +61,7 @@ public class Main {
             System.out.print("Enter student ID: ");
             String id = scanner.nextLine().trim();
 
+
             System.out.print("Enter name: ");
             String name = scanner.nextLine().trim();
 
@@ -72,7 +73,7 @@ public class Main {
 
             // check program field separately since it is not in StudentValidator
             if (courseProgram.isEmpty()) {
-                throw new InvalidStudentDataException("Program cannot be empty.");
+                throw new InvalidStudentDataException("Program cannot be empty. Complete all the fields");
             }
 
             System.out.print("Enter year of study (1-4): ");
