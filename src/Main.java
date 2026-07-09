@@ -61,11 +61,6 @@ public class Main {
             System.out.print("Enter student ID: ");
             String id = scanner.nextLine().trim();
 
-            // check year field is not blank before parsing
-            if (id.isEmpty()) {
-                throw new InvalidStudentDataException("Year of study cannot be empty.");
-            }
-
             System.out.print("Enter name: ");
             String name = scanner.nextLine().trim();
 
@@ -75,17 +70,13 @@ public class Main {
             System.out.print("Enter program: ");
             String courseProgram = scanner.nextLine().trim();
 
-            // check program field separately since it is not in StudentValidator
-            if (courseProgram.isEmpty()) {
-                throw new InvalidStudentDataException("Program cannot be empty. Complete all the fields");
-            }
-
             System.out.print("Enter year of study (1-4): ");
             String yearInput = scanner.nextLine().trim();
 
-            // check year field is not blank before parsing
+            // check year is not blank before parsing
             if (yearInput.isEmpty()) {
-                throw new InvalidStudentDataException("Year of study cannot be empty.");
+                throw new InvalidStudentDataException(
+                        "Registration failed: All fields must be completed.");
             }
 
             int year = Integer.parseInt(yearInput);
@@ -93,17 +84,13 @@ public class Main {
             System.out.print("Enter mentorship preferences: ");
             String preferences = scanner.nextLine().trim();
 
-            // check preferences field separately
-            if (preferences.isEmpty()) {
-                throw new InvalidStudentDataException("Mentorship preferences cannot be empty.");
-            }
-
-            // validate all core fields using StudentValidator
-            StudentValidator.validate(id, name, email, year);
+            // validate all fields using StudentValidator
+            StudentValidator.validate(id, name, email, courseProgram, preferences, year);
 
             // check for duplicate registration against database
             if (repository.findById(id) != null) {
-                throw new DuplicateRegistrationException("A student with ID " + id + " is already registered.");
+                throw new DuplicateRegistrationException(
+                        "A student with ID " + id + " is already registered.");
             }
 
             Student student = new Student(id, name, email, courseProgram, year, preferences);
@@ -122,11 +109,11 @@ public class Main {
             logger.warning("Registration failed: " + e.getMessage());
 
         } catch (InvalidStudentDataException e) {
-            System.out.println("Registration failed: " + e.getMessage());
-            logger.warning("Registration failed: " + e.getMessage());
+            System.out.println(e.getMessage());
+            logger.warning("Validation failed: " + e.getMessage());
 
         } catch (NumberFormatException e) {
-            System.out.println("Registration failed: Year of study must be a valid number.");
+            System.out.println("Registration failed: All fields must be completed.");
             logger.warning("Invalid year input during registration.");
 
         } catch (SQLException e) {
