@@ -114,3 +114,13 @@ Jul 09, 2026 4:54:53 PM Main registerStudent
 WARNING: Registration failed: Program cannot be empty. Complete all the fields
 Jul 09, 2026 5:23:38 PM Main registerStudent
 WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 13, 2026 11:44:49 AM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 13, 2026 11:45:41 AM Main registerStudent
+INFO: Student registered: 16688
+Jul 13, 2026 11:45:45 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 13, 2026 11:46:05 AM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 13, 2026 11:46:21 AM Main registerStudent
+WARNING: Registration failed: A student with ID 16688 is already registered.

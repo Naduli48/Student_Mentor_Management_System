@@ -90,7 +90,7 @@ public class Main {
             // check for duplicate registration against database
             if (repository.findById(id) != null) {
                 throw new DuplicateRegistrationException(
-                        "A student with ID " + id + " is already registered.");
+                        "A student with ID " + id + " is already registered. Try again");
             }
 
             Student student = new Student(id, name, email, courseProgram, year, preferences);
