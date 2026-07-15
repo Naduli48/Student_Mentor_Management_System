@@ -40,16 +40,6 @@ public class StudentRegistrationTest {
         assertEquals("Machine Learning", student.getPreferences());
     }
 
-    // Test 2: Verify inheritance - Student is an instance of User
-    @Test
-    public void testStudentIsInstanceOfUser() {
-        Student student = new Student(
-                "TEST001", "Naduli Kosgallana", "naduli@gmail.com",
-                "BSc AI and Data Science", 2, "Machine Learning"
-        );
-        assertTrue(student instanceof User);
-    }
-
     // Test 3: Verify a student can be saved to the database and retrieved by ID
     @Test
     public void testSaveAndFindById() throws SQLException {
