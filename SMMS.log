@@ -126,3 +126,13 @@ Jul 13, 2026 11:46:21 AM Main registerStudent
 WARNING: Registration failed: A student with ID 16688 is already registered.
 Jul 15, 2026 9:55:04 AM Main registerStudent
 WARNING: Validation failed: Email address is not valid. Please enter a valid email (e.g. name@example.com).
+Jul 15, 2026 10:00:59 AM Main registerStudent
+WARNING: Validation failed: Email address is not valid. Please enter a valid email (e.g. name@example.com).
+Jul 15, 2026 10:04:49 AM Main viewAllStudents
+INFO: Viewed all registered students.
+Jul 15, 2026 10:04:59 AM Main removeStudent
+INFO: Student removed: 1
+Jul 15, 2026 10:05:06 AM Main removeStudent
+INFO: Student removed: 16598
+Jul 15, 2026 10:05:13 AM Main removeStudent
+INFO: Student removed: 16688
