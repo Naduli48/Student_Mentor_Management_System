@@ -13,9 +13,10 @@ public class StudentValidator {
                     "Registration failed: All fields must be completed.");
         }
 
-        if (!email.contains("@")) {
+        // validate email format using regex
+        if (!email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
             throw new InvalidStudentDataException(
-                    "Email address is not valid.");
+                    "Email address is not valid. Please enter a valid email (e.g. name@example.com).");
         }
 
         if (year < 1 || year > 4) {
