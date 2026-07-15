@@ -40,7 +40,7 @@ public class StudentRegistrationTest {
         assertEquals("Machine Learning", student.getPreferences());
     }
 
-    // Test 3: Verify a student can be saved to the database and retrieved by ID
+    // Test 2: Verify a student can be saved to the database and retrieved by ID
     @Test
     public void testSaveAndFindById() throws SQLException {
         Student student = new Student(
@@ -55,14 +55,14 @@ public class StudentRegistrationTest {
         assertEquals("naduli@gmail.com", found.getEmail());
     }
 
-    // Test 4: Verify findById returns null when student does not exist
+    // Test 3: Verify findById returns null when student does not exist
     @Test
     public void testFindByIdReturnsNullWhenNotFound() throws SQLException {
         Student result = repository.findById("NONEXISTENT");
         assertNull(result);
     }
 
-    // Test 5: Verify a student can be deleted from the database
+    // Test 4: Verify a student can be deleted from the database
     @Test
     public void testDeleteStudent() throws SQLException {
         Student student = new Student(
@@ -75,7 +75,7 @@ public class StudentRegistrationTest {
         assertNull(result);
     }
 
-    // Test 6: Verify MentorshipProgram correctly detects a registered student
+    // Test 5: Verify MentorshipProgram correctly detects a registered student
     @Test
     public void testIsStudentRegistered() {
         Student student = new Student(
@@ -87,49 +87,49 @@ public class StudentRegistrationTest {
         assertFalse(program.isStudentRegistered("TEST002"));
     }
 
-    // Test 7: empty ID
+    // Test 6: empty ID
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmptyId()
             throws InvalidStudentDataException {
         StudentValidator.validate("", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 8: empty name
+    // Test 7: empty name
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmptyName()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 9: Verify InvalidStudentDataException thrown for email without @
+    // Test 8: Verify InvalidStudentDataException thrown for email without @
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidEmail()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "Naduli", "notanemail", "BSc AI", "ML", 2);
     }
 
-    // Test 10: Verify InvalidStudentDataException thrown for email without domain extension
+    // Test 9: Verify InvalidStudentDataException thrown for email without domain extension
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmailWithoutExtension()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "Naduli", "naduli@gmail", "BSc AI", "ML", 2);
     }
 
-    // Test 11: Verify valid email passes validation without throwing exception
+    // Test 10: Verify valid email passes validation without throwing exception
     @Test
     public void testValidationPassesForValidEmail()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 12: year below range
+    // Test 11: year below range
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearBelow()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 0);
     }
 
-    // Test 13: year above range
+    // Test 12: year above range
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidYearAbove()
             throws InvalidStudentDataException {
