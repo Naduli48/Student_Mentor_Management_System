@@ -21,7 +21,7 @@ public class StudentValidator {
 
         if (year < 1 || year > 4) {
             throw new InvalidStudentDataException(
-                    "Year must be between 1 and 4.");
+                    "Registration failed: Year must be between 1 and 4.");
         }
     }
 }

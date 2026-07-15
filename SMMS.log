@@ -146,3 +146,7 @@ Jul 15, 2026 10:27:44 AM Main registerStudent
 WARNING: Validation failed: Registration failed: All fields must be completed.
 Jul 15, 2026 10:28:19 AM Main registerStudent
 WARNING: Invalid year input during registration.
+Jul 15, 2026 10:35:20 AM Main registerStudent
+WARNING: Invalid year input during registration.
+Jul 15, 2026 10:36:34 AM Main registerStudent
+WARNING: Validation failed: Year must be between 1 and 4.
