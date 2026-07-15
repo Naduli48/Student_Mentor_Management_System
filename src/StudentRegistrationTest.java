@@ -112,14 +112,14 @@ public class StudentRegistrationTest {
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForEmailWithoutExtension()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail", "BSc AI", "ML", 2);
+        StudentValidator.validate("TEST001", "Naduli", "saruj32@gmail", "BSc AI", "ML", 2);
     }
 
     // Test 10: Verify valid email passes validation without throwing exception
     @Test
     public void testValidationPassesForValidEmail()
             throws InvalidStudentDataException {
-        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 2);
+        StudentValidator.validate("TEST001", "Naduli", "saruj32@gmail.com", "BSc AI", "ML", 2);
     }
 
     // Test 11: year below range

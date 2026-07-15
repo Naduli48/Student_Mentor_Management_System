@@ -136,3 +136,13 @@ Jul 15, 2026 10:05:06 AM Main removeStudent
 INFO: Student removed: 16598
 Jul 15, 2026 10:05:13 AM Main removeStudent
 INFO: Student removed: 16688
+Jul 15, 2026 10:22:05 AM Main registerStudent
+INFO: Student registered: 001
+Jul 15, 2026 10:25:10 AM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 15, 2026 10:27:06 AM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 15, 2026 10:27:44 AM Main registerStudent
+WARNING: Validation failed: Registration failed: All fields must be completed.
+Jul 15, 2026 10:28:19 AM Main registerStudent
+WARNING: Invalid year input during registration.

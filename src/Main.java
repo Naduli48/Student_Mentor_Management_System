@@ -113,7 +113,7 @@ public class Main {
             logger.warning("Validation failed: " + e.getMessage());
 
         } catch (NumberFormatException e) {
-            System.out.println("Registration failed: All fields must be completed.");
+            System.out.println("Registration failed: Year must be a valid number.");
             logger.warning("Invalid year input during registration.");
 
         } catch (SQLException e) {
