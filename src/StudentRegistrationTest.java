@@ -111,11 +111,25 @@ public class StudentRegistrationTest {
         StudentValidator.validate("TEST001", "", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
-    // Test 9: invalid email
+    // Test 9: Verify InvalidStudentDataException thrown for email without @
     @Test(expected = InvalidStudentDataException.class)
     public void testValidationThrowsExceptionForInvalidEmail()
             throws InvalidStudentDataException {
         StudentValidator.validate("TEST001", "Naduli", "notanemail", "BSc AI", "ML", 2);
+    }
+
+    // Test 10: Verify InvalidStudentDataException thrown for email without domain extension
+    @Test(expected = InvalidStudentDataException.class)
+    public void testValidationThrowsExceptionForEmailWithoutExtension()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail", "BSc AI", "ML", 2);
+    }
+
+    // Test 11: Verify valid email passes validation without throwing exception
+    @Test
+    public void testValidationPassesForValidEmail()
+            throws InvalidStudentDataException {
+        StudentValidator.validate("TEST001", "Naduli", "naduli@gmail.com", "BSc AI", "ML", 2);
     }
 
     // Test 12: year below range
