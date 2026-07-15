@@ -150,3 +150,23 @@ Jul 15, 2026 10:35:20 AM Main registerStudent
 WARNING: Invalid year input during registration.
 Jul 15, 2026 10:36:34 AM Main registerStudent
 WARNING: Validation failed: Year must be between 1 and 4.
+Jul 15, 2026 10:38:49 AM Main registerStudent
+WARNING: Validation failed: Registration failed: Year must be between 1 and 4.
+Jul 15, 2026 10:39:56 AM Main registerStudent
+WARNING: Validation failed: Email address is not valid. Please enter a valid email (e.g. name@example.com).
+Jul 15, 2026 10:42:39 AM Main registerStudent
+WARNING: Registration failed: A student with ID 001 is already registered. Try again
+Jul 15, 2026 10:45:35 AM Main removeStudent
+INFO: Student removed: 001
+Jul 15, 2026 10:47:27 AM Main removeStudent
+WARNING: Attempted to remove non-existent student: 001
+Jul 15, 2026 10:47:38 AM Main removeStudent
+WARNING: Attempted to remove non-existent student: 002
+Jul 15, 2026 10:49:46 AM Main registerStudent
+INFO: Student registered: 001
+Jul 15, 2026 10:50:20 AM Main registerStudent
+INFO: Student registered: 002
+Jul 15, 2026 10:51:38 AM Main registerStudent
+INFO: Student registered: 003
+Jul 15, 2026 10:51:41 AM Main viewAllStudents
+INFO: Viewed all registered students.
