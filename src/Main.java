@@ -110,9 +110,12 @@ public class Main {
             program.addStudent(student);
 
             // persist to database
+            // [2.9] Main calls StudentRepository.save()
             repository.save(student);
 
+            // [2.10] Main displays success message to Student
             System.out.println("Student registered successfully.");
+            // [2.11] Main calls LoggerUtil.info() to log the registration event
             logger.info("Student registered: " + id);
 
         } catch (DuplicateRegistrationException e) {
