@@ -58,6 +58,8 @@ public class Main {
     // Handles the student registration process, including input validation and duplicate checking before saving to the database.
     private static void registerStudent(MentorshipProgram program, StudentRepository repository) {
         try {
+            // [1] Student selects register option - Main receives the request
+            // [1.1] Main prompts student for details
             System.out.print("Enter student ID: ");
             String id = scanner.nextLine().trim();
 
@@ -85,17 +87,26 @@ public class Main {
             String preferences = scanner.nextLine().trim();
 
             // validate all fields using StudentValidator
+            // [2] Student enters details - Main receives enterDetails()
+            // [2.1] Main calls StudentValidator.validate()
             StudentValidator.validate(id, name, email, courseProgram, preferences, year);
+            // [2.2] alt: StudentValidator throws InvalidStudentDataException to Main
+            // [2.3] alt: Main displays error message to Student
 
+            // [2.4] Main calls StudentRepository.findById() to check for duplicate
             // check for duplicate registration against database
             if (repository.findById(id) != null) {
+                // [2.5] alt: StudentRepository returns student (not null) to Main
+                // [2.6] alt: Main displays error message to Student
                 throw new DuplicateRegistrationException(
                         "A student with ID " + id + " is already registered. Try again");
             }
 
+            // [2.7] Main creates new Student object
             Student student = new Student(id, name, email, courseProgram, year, preferences);
 
             // add to in-memory program list
+            // [2.8] Main calls MentorshipProgram.addStudent()
             program.addStudent(student);
 
             // persist to database
